@@ -42,7 +42,7 @@ h1 {
 }
 #inputform{
     position: absolute;
-    top: 99%;
+    top: 670px;
     left: 50%;
     transform: translate(-50%,-50%);
     justify-content: center;
@@ -62,7 +62,7 @@ h1 {
     position: absolute;
     display: grid;
     padding-bottom: 200px;
-    top: 110%;
+    top: 740px;
     left: 50%;
     transform: translate(-50%, 0);
 
