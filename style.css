@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+:root{
+    --border: 2px solid black;
+}
+body {
+    font-family: 'Francois One', sans-serif;
+}
+.griditem{
+    border-top: var(--border);
+    border-left: var(--border);
+}
+h1 {
+    justify-content: center;
+    text-align: center;
+}
+#tkb {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 0px;
+    grid-template-rows: 0;
+    top: 350px;
+    left: 50%;
+    grid-template-columns: repeat(8,80px);
+    grid-template-rows: repeat(11,50px);
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+    transform: translate(-50%,-50%);
+}
+.t8, .thu8{
+    border-right: var(--border);
+}
+.tiet9, .titlet9{
+    border-bottom: var(--border);
+}
+.griditem{
+    justify-content: center;
+    text-align: center;
+}
+.titlebreak, .break{
+    border-left: 0px solid black;
+    border-right: 0px solid black;
+}
+#inputform{
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    text-align: center;
+}
+#form{
+    border: var(--border);
+    height: 30px;
+    width: 300px;
+    padding: 5px;
+}
+.fas{
+    font-size: 25px;
+    cursor: pointer;
+}
+#displayres{
+    position: absolute;
+    display: grid;
+    padding-bottom: 200px;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    grid-template-columns: 40px 100px 60px 80px 40px 40px 40px 40px 200px 200px 40px 50px;
+    justify-content: center;
+    text-align: center;
+}
+.title{
+    border: var(--border);
+}
+
+button{
+    cursor: pointer;
+    background-color: rgb(231, 231, 231);
+}
