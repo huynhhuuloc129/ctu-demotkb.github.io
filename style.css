@@ -1,19 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
 :root{
     --border: 2px solid black;
+    --font: 'Francois One', sans-serif;
 }
 body {
-    font-family: 'Francois One', sans-serif;
+    background-image: url(study.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(70, 31, 17);
+    overflow:visible;
+    background-attachment: fixed;
+    /* background-color: rgb(255, 235, 235); */
+    font-family: var(--font);
 }
 .griditem{
     border-top: var(--border);
     border-left: var(--border);
 }
+h2, h1{
+    color: rgb(70, 31, 17);
+   
+}
 h1 {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%,0%);
     justify-content: center;
     text-align: center;
 }
 #tkb {
+    z-index: -1;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
     position: absolute;
     display: grid;
     grid-template-columns: 0px;
@@ -54,14 +73,14 @@ h1 {
     width: 300px;
     padding: 5px;
 }
-.fas{
-    font-size: 25px;
-    cursor: pointer;
-}
+
 #displayres{
+    z-index: -1;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
     position: absolute;
     display: grid;
-    padding-bottom: 200px;
+    margin-bottom: 200px;
     top: 740px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -75,6 +94,49 @@ h1 {
 }
 
 button{
+    font-family: var(--font);
     cursor: pointer;
     background-color: rgb(231, 231, 231);
+}
+.fab, .fas{
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 3px 0 3px;
+    color: black;
+    display: none;
+}
+.fa-search{
+    display:contents;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+}
+hr{
+    position: absolute;
+    /* top: 10px; */
+}
+#contact{
+    display: flex;
+}
+
+#buttoncontact:hover{
+    background: white;
+    color: rgb(31, 31, 31);
+}
+input{
+    font-family: var(--font);
+}
+#buttoncontact{
+    display: none;
+    border: none;
+    transition: 0.25s;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    
+    font-family: var(--font);
+    padding: 10px;
+    font-size: 20px;
+}
+.child, .tiet{
+    color: brown;
 }
