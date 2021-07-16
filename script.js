@@ -18,7 +18,7 @@ function loadJSON(callback) {
 }
 // -----------------------------------------------------------------------------------
 function init() {
-    var searchicon = document.getElementsByClassName("fas")[0];
+    var searchicon = document.getElementsByClassName("fa-search")[0];
     var form = document.getElementById("form");
     form.addEventListener("keyup", Enterkey);
     searchicon.onclick = getuserInput;
