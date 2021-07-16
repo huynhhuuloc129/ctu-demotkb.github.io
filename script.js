@@ -127,33 +127,33 @@ function checkbutton(thu, inputvalue) {
             }
             if (t) {
                 for (let j = 0; j < buttonlist.length; j++) {
-                    if (buttonlist[j].innerHTML != "Delete") buttonlist[j].disabled=true;
+                    if (buttonlist[j].innerHTML != "Delete") buttonlist[j].disabled = true;
                 }
-            } else{
-            // Chạy dòng trong 1 list học phần
+            } else {
+                // Chạy dòng trong 1 list học phần
 
-            for (let j = 0; j < buttonlist.length; j++) {
-                let sotiet = parseInt(childlist[5 + 11 * j].innerHTML);
-                let thuhp = parseInt(childlist[6 + 11 * j].innerHTML);
-                let tietbd = parseInt(childlist[7 + 11 * j].innerHTML);
-                // Kiem tra coi có trùng ngày, tiết hay không
-                if (thu[1] == thuhp && (tietbd + sotiet) >= (i + 1) && (i <= 4 && tietbd <= (i + 1) || (i >= 6) && (tietbd <= i))) {
-                    let malop = childlist[0 + 11 * j].innerHTML;
+                for (let j = 0; j < buttonlist.length; j++) {
+                    let sotiet = parseInt(childlist[5 + 11 * j].innerHTML);
+                    let thuhp = parseInt(childlist[6 + 11 * j].innerHTML);
+                    let tietbd = parseInt(childlist[7 + 11 * j].innerHTML);
+                    // Kiem tra coi có trùng ngày, tiết hay không
+                    if (thu[1] == thuhp && (tietbd + sotiet) >= (i + 1) && (i <= 4 && tietbd <= (i + 1) || (i >= 6) && (tietbd <= i))) {
+                        let malop = childlist[0 + 11 * j].innerHTML;
 
-                    // Chạy dòng for check coi có ai trùng mã lớp thì cho disable luôn
-                    for (let k = 0; k < buttonlist.length; k++) {
-                        if (malop == childlist[0 + 11 * k].innerHTML) {
-                            buttonlist[k].disabled = true;
-                            buttonlist[k].className += " block";
+                        // Chạy dòng for check coi có ai trùng mã lớp thì cho disable luôn
+                        for (let k = 0; k < buttonlist.length; k++) {
+                            if (malop == childlist[0 + 11 * k].innerHTML) {
+                                buttonlist[k].disabled = true;
+                                buttonlist[k].className += " block";
+                            }
                         }
+                    } else if (buttonlist[j].disabled == true && buttonlist[j].className.indexOf(" block") == -1) {
+                        buttonlist[j].disabled = false;
+                        buttonlist[j].className.replace(" block", "");
                     }
-                } else if (buttonlist[j].disabled == true && buttonlist[j].className.indexOf(" block") == -1) {
-                    buttonlist[j].disabled = false;
-                    buttonlist[j].className.replace(" block", "");
                 }
             }
         }
-    }
     }
 }
 
@@ -195,6 +195,7 @@ function xulibutton() {
     var classname = this.className;
     var i = classname.match(/(\d+)/)[0];
     let tenlop = childlist[0 + 11 * (i - 1)].innerHTML;
+    let tenhp = childlist[2 + 11 * (i-1)].innerHTML;
     // Đổi add sang delete
     if (buttonclicked.innerHTML == "Add") {
         for (let j = 0; j < buttonlist.length; j++) {
@@ -231,7 +232,7 @@ function xulibutton() {
             }
             if (buttonlist[j].className.indexOf("block") < 0) buttonlist[j].disabled = false;
         }
-        xoakhoiTKB(tenlop);
+        xoakhoiTKB(tenlop, tenhp);
     }
 }
 
@@ -248,17 +249,17 @@ function themvaoTKB(thu, sotiet, tietbd, mahp, tenlop) {
 
 
 // Xóa khỏi tkb khi ấn delete
-function xoa(thu, tenlop) {
+function xoa(thu, tenlop, tenhp) {
     var thulist = document.getElementsByClassName(thu);
     for (let i = 0; i < thulist.length; i++) {
-        if (thulist[i].innerHTML.indexOf(tenlop) >= 0) {
+        if (thulist[i].innerHTML.indexOf(tenlop) >= 0 && thulist[i].innerHTML.indexOf(tenhp) >= 0) {
             thulist[i].innerHTML = "";
         }
     }
 }
-function xoakhoiTKB(tenlop) {
+function xoakhoiTKB(tenlop, tenhp) {
     for (let i = 2; i <= 8; i++) {
-        xoa("t" + i, tenlop)
+        xoa("t" + i, tenlop, tenhp)
     }
 
 }
