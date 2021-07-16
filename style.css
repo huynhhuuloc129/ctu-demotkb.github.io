@@ -145,4 +145,5 @@ input{
     position: absolute; 
     top: 600px;
     color: rgb(206, 0, 0);
+    z-index: -9;
 }
