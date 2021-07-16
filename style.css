@@ -140,3 +140,9 @@ input{
 .child, .tiet{
     color: brown;
 }
+#warning{
+    background-color:rgb(231, 231, 231);
+    position: absolute; 
+    top: 600px;
+    color: rgb(206, 0, 0);
+}
