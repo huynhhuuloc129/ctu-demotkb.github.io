@@ -98,7 +98,7 @@ function xuli(inputvalue) {
         var ma = checkhp("t" + i, inputvalue.toUpperCase());
         if (ma != null) {
 
-            var malop = ma.slice(ma.indexOf(" ") + 1, ma.length);
+            var malop = ma.slice(ma.indexOf("-") + 1, ma.indexOf("<"));
             // Chạy 1 dòng trong buttonlist
             for (let j = 0; j < buttonlist.length; j++) {
                 if (childlist[0 + 11 * j].innerHTML == malop) {
@@ -195,7 +195,7 @@ function xulibutton() {
     var classname = this.className;
     var i = classname.match(/(\d+)/)[0];
     let tenlop = childlist[0 + 11 * (i - 1)].innerHTML;
-    let tenhp = childlist[2 + 11 * (i-1)].innerHTML;
+    let tenhp = childlist[2 + 11 * (i - 1)].innerHTML;
     // Đổi add sang delete
     if (buttonclicked.innerHTML == "Add") {
         for (let j = 0; j < buttonlist.length; j++) {
@@ -203,7 +203,7 @@ function xulibutton() {
         }
         for (let j = 0; j < buttonlist.length; j++) {
             if (childlist[0 + 11 * j].innerHTML == tenlop) {
-
+                let phong = childlist[3 + 11 * j].innerHTML;
                 let sotiet = parseInt(childlist[5 + 11 * j].innerHTML);
                 let thu = parseInt(childlist[6 + 11 * j].innerHTML);
                 let tietbd = parseInt(childlist[7 + 11 * j].innerHTML);
@@ -216,7 +216,7 @@ function xulibutton() {
                 for (let k = 0; k < wholeline.length; k++) {
                     wholeline[k].style.color = "black";
                 }
-                themvaoTKB(thu, sotiet, tietbd, mahp, tenlop);
+                themvaoTKB(thu, sotiet, tietbd, mahp, tenlop, phong);
             }
         }
     } else { // Đổi delete sang add
@@ -238,12 +238,12 @@ function xulibutton() {
 
 
 // Them vào tkb khi ấn add
-function themvaoTKB(thu, sotiet, tietbd, mahp, tenlop) {
+function themvaoTKB(thu, sotiet, tietbd, mahp, tenlop, phong) {
     var thulist = document.getElementsByClassName("t" + thu);
     for (let i = tietbd; i < tietbd + sotiet; i++) {
         if (tietbd < 6)
-            thulist[i - 1].innerHTML = mahp + "<br> " + tenlop;
-        else thulist[i].innerHTML = mahp + "<br> " + tenlop;
+            thulist[i - 1].innerHTML = mahp + "-" + tenlop + "<br>" + " " + phong;
+        else thulist[i].innerHTML = mahp + "-" + tenlop + "<br>" + " " + phong;
     }
 }
 
