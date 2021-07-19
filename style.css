@@ -113,6 +113,7 @@ button{
     padding:2px 2px 2px 4px;
 }
 #idea,#code{
+    display: none;
     background: rgb(231, 231, 231);
     width: 120px;
 }
