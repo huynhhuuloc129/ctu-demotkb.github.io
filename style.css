@@ -98,27 +98,35 @@ button{
     cursor: pointer;
     background-color: rgb(231, 231, 231);
 }
-.fab, .fas{
+.fa-envelope{
+    margin-left: 6px;
+}
+.fa-envelope, .fa-github, .fa-facebook-square, .fa-instagram-square{
     font-size: 20px;
     cursor: pointer;
-    padding: 0 3px 0 3px;
+    padding-left: 2px;
     color: black;
-    display: none;
+    background: rgb(231, 231, 231);
 }
+#idea-name,#code-name{
+    font-size:15px ;
+    padding:2px 2px 2px 4px;
+}
+#idea,#code{
+    background: rgb(231, 231, 231);
+    width: 120px;
+}
+#contact{
+    display: flex;
+    flex-direction: column;
+}
+
 .fa-search{
     display:contents;
     color: black;
     font-size: 25px;
     cursor: pointer;
 }
-hr{
-    position: absolute;
-    /* top: 10px; */
-}
-#contact{
-    display: flex;
-}
-
 #buttoncontact:hover{
     background: white;
     color: rgb(31, 31, 31);
@@ -127,12 +135,11 @@ input{
     font-family: var(--font);
 }
 #buttoncontact{
-    display: none;
     border: none;
     transition: 0.25s;
     background-color: rgb(31, 31, 31);
     color: white;
-    
+    width: 100px;
     font-family: var(--font);
     padding: 10px;
     font-size: 20px;
