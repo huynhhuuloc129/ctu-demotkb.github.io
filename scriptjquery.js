@@ -1,5 +1,6 @@
 // var data;
 $(document).ready(function () {
+    $("#idea, #code").hide();
     // lấy file json
     var data;
     $.getJSON("data.json", data, function (data) {
@@ -7,9 +8,7 @@ $(document).ready(function () {
     });
 });
 
-
 function control(data) {
-    $("#idea, #code").hide();
     buttoncontact();
     // click vào icon search
     $(".fa-search").click(function (e) {
@@ -86,8 +85,13 @@ function ngaytrungnhau() {
                             changeBackgroundButton(buttonlistname, "Delete", "Grey", ".child" + (j + 1), "black");
                         }
                     }
-                } else if((thuhienco == thu) && (tietbd + sotiet >= vitri) && (tietbd <= vitri) && (mahp != mahptkb || malop != maloptkb)){ 
-                    buttonlist[j].disabled=true;
+                } else if ((thuhienco == thu) && (tietbd + sotiet >= vitri) && (tietbd <= vitri) && (mahp != mahptkb || malop != maloptkb)) {
+                    let malop1 = childlist[0 + 11 * j].innerHTML;
+                    for (let k = 0; k < buttonlist.length; k++) {
+                        if (childlist[0 + 11 * k].innerHTML == malop1) {
+                            buttonlist[k].disabled = true;
+                        }
+                    }
                 }
             }
         }
@@ -136,7 +140,7 @@ function createElement(tagname, element, vitri) {
             // Nếu các lớp có cùng mã lớp sẽ cùng dc bấm 
             if (childlist[1 + 11 * i].innerHTML == childlist[1 + 11 * (vitri - 1)].innerHTML)
                 xulibutton(".childbutton" + (i + 1), i + 1);
-       }
+        }
         disablebutton();
         ngaytrungnhau();
     };
@@ -175,7 +179,7 @@ function xulibutton(buttonclass, vitri) {
     } else {
         changeBackgroundButton(buttonclass, "Add", "rgb(231, 231, 231)", ".child" + vitri, "brown");
         delfromTKB(sotiet, thu, tietbd);
-       
+
     }
 }
 
@@ -184,6 +188,7 @@ function changeBackgroundButton(buttonclass, text, color1, lineclass, color2) {
     $(buttonclass).text(text).css("background", color1);
     $(lineclass).css("color", color2);
 }
+
 // Thêm vào TKB
 function addtoTKB(kihieu, mahp, phong, sotiet, thu, tietbd) {
 
@@ -191,19 +196,21 @@ function addtoTKB(kihieu, mahp, phong, sotiet, thu, tietbd) {
         $(".t" + thu + ".tiet" + (tietbd + i)).html(mahp + "-" + kihieu + "<br>" + phong);
     }
 }
+
 // Xỏa khỏi TKB
 function delfromTKB(sotiet, thu, tietbd) {
     for (let i = 0; i < sotiet; i++) {
         $(".t" + thu + ".tiet" + (tietbd + i)).html("");
     }
 }
+
 // buttoncontact
-function buttoncontact(){
-    $(".fa-envelope").click(function(e){
+function buttoncontact() {
+    $(".fa-envelope").click(function (e) {
         e.preventDefault();
-        alert("Gmail: "+ $(this).attr("href"));
+        alert("Gmail: " + $(this).attr("href"));
     })
-    $("#buttoncontact").click(function (e) { 
+    $("#buttoncontact").click(function (e) {
         e.preventDefault();
         $("#idea, #code").slideToggle();
     });
