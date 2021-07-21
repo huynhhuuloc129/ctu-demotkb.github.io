@@ -2,12 +2,14 @@
 :root{
     --border: 2px solid black;
     --font: 'Francois One', sans-serif;
+    --fontcolor:rgb(70, 31, 17);
+    --backgroundcolor: rgb(231, 231, 231);
 }
 body {
-    background-image: url(study.jpg);
+    background-image: url(study2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    color: rgb(70, 31, 17);
+    color: var(--fontcolor);
     overflow:visible;
     background-attachment: fixed;
     /* background-color: rgb(255, 235, 235); */
@@ -18,32 +20,33 @@ body {
     border-left: var(--border);
 }
 h2, h1{
-    color: rgb(70, 31, 17);
+    color: var(--fontcolor);
    
 }
 h1 {
+    color: rgb(255, 0, 0);
     position: absolute;
     top: -5px;
-    left: 50%;
-    transform: translate(-50%,0%);
+    left: 75%;
+    transform: translate(-75%,0%);
     justify-content: center;
     text-align: center;
 }
 #tkb {
     z-index: -1;
-    background-color: rgb(231, 231, 231);
+    background-color: var(--backgroundcolor);
     border-radius: 10px;
     position: absolute;
     display: grid;
     grid-template-columns: 0px;
     grid-template-rows: 0;
     top: 350px;
-    left: 50%;
+    left: 90%;
     grid-template-columns: repeat(8,80px);
     grid-template-rows: repeat(11,50px);
     grid-row-gap: 0;
     grid-column-gap: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-90%,-50%);
 }
 .t8, .thu8{
     border-right: var(--border);
@@ -76,7 +79,7 @@ h1 {
 
 #displayres{
     z-index: -1;
-    background-color: rgb(231, 231, 231);
+    background-color: var(--backgroundcolor);
     border-radius: 10px;
     position: absolute;
     display: grid;
@@ -96,7 +99,6 @@ h1 {
 button{
     font-family: var(--font);
     cursor: pointer;
-    background-color: rgb(231, 231, 231);
 }
 .fa-envelope{
     margin-left: 6px;
@@ -106,7 +108,7 @@ button{
     cursor: pointer;
     padding-left: 2px;
     color: black;
-    background: rgb(231, 231, 231);
+    background: var(--backgroundcolor);
 }
 #idea-name,#code-name{
     font-size:15px ;
@@ -114,12 +116,11 @@ button{
 }
 #idea,#code{
     display: none;
-    background: rgb(231, 231, 231);
     width: 120px;
 }
 #contact{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .fa-search{
@@ -134,6 +135,10 @@ button{
 }
 input{
     font-family: var(--font);
+    border: var(--border);
+    height: 20px;
+    width: 300px;
+    padding: 5px;
 }
 #buttoncontact{
     border: none;
@@ -149,9 +154,43 @@ input{
     color: brown;
 }
 #warning{
-    background-color:rgb(231, 231, 231);
     position: absolute; 
     top: 600px;
     color: rgb(206, 0, 0);
     z-index: -9;
+}
+.fa-hand-point-down{
+    color: black;
+    padding: 2px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#tracuuform{
+    position: absolute;
+    top: 19%;
+    left: 8%;
+    transform: translate(-8%,-19%);
+}
+#tracuuinput{
+    width: 400px;
+}
+#tracuutitle{
+    color: black;
+    position: absolute;
+    padding: 0 0 0 20px;
+    left: 15%;
+    transform: translate(-15%,0);
+}
+#ketquatracuu {
+    max-height: 400px;
+    display: none;
+    background: var(--backgroundcolor);
+    height: auto;
+    overflow:scroll; 
+    border: 2px solid black;
+    position: absolute;
+    top: 23%;
+    left: 8%;
+    transform: translate(-8%,0%);
+    width: 400px;
 }

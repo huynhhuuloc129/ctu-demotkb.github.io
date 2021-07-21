@@ -9,10 +9,19 @@ $(document).ready(function () {
 });
 
 function control(data) {
+    showhp(data) // Hiện mã hp (all)
+    $("#tracuuinput").keyup(function (e) {
+        e.preventDefault();
+        setTimeout(() => {
+            $("#ketquatracuu").show();
+            searchbar()
+        }, 1000); 
+    });
+
     buttoncontact();
     // click vào icon search
     $(".fa-search").click(function (e) {
-        e.preventDefault;
+        e.preventDefault();
         goixuli(data);
     });
 
@@ -177,7 +186,7 @@ function xulibutton(buttonclass, vitri) {
         changeBackgroundButton(buttonclass, "Delete", "Grey", ".child" + vitri, "black");
         addtoTKB(kihieu, mahp, phong, sotiet, thu, tietbd);
     } else {
-        changeBackgroundButton(buttonclass, "Add", "rgb(231, 231, 231)", ".child" + vitri, "brown");
+        changeBackgroundButton(buttonclass, "Add", "", ".child" + vitri, "brown");
         delfromTKB(sotiet, thu, tietbd);
 
     }
@@ -214,4 +223,28 @@ function buttoncontact() {
         e.preventDefault();
         $("#idea, #code").slideToggle();
     });
+}
+// thanh search mã hp
+function searchbar() {
+    var value = $("#tracuuinput").val().toUpperCase();
+    var ketquatracuu = $(".ketqua");
+    if (value =="") {
+        $("#ketquatracuu").hide();
+    }
+    for (let i = 0; i < ketquatracuu.length; i++) {
+        if (ketquatracuu[i].innerHTML.toUpperCase().indexOf(value) > -1) {
+            $(".ketqua"+i).show();   
+        } else $(".ketqua"+i).hide();
+    }
+}
+function showhp(data) {
+    var j=-1;
+    for (let i = 0; i < data.length - 1; i++) {
+        let tenhp = data[i]["Tên học phần"];
+        let mahp = data[i]["Mã HP"];
+        if (data[i]["Tên học phần"] != data[i + 1]["Tên học phần"]) {
+            j++;
+            $("#ketquatracuu").append("<div class=\"ketqua ketqua" + j + "\">" + tenhp + " - " + mahp + "</div>");
+        }
+    }
 }
