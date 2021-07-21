@@ -20,11 +20,11 @@ body {
     border-left: var(--border);
 }
 h2, h1{
-    color: var(--fontcolor);
+    color: black;
    
 }
 h1 {
-    color: rgb(255, 0, 0);
+    color: rgb(59, 98, 129);
     position: absolute;
     top: -5px;
     left: 75%;
@@ -33,7 +33,7 @@ h1 {
     text-align: center;
 }
 #tkb {
-    z-index: -1;
+    z-index: 9;
     background-color: var(--backgroundcolor);
     border-radius: 10px;
     position: absolute;
@@ -167,9 +167,8 @@ input{
 }
 #tracuuform{
     position: absolute;
-    top: 19%;
-    left: 8%;
-    transform: translate(-8%,-19%);
+    top: 120px;
+    left: 75px;
 }
 #tracuuinput{
     width: 400px;
@@ -178,8 +177,8 @@ input{
     color: black;
     position: absolute;
     padding: 0 0 0 20px;
-    left: 15%;
-    transform: translate(-15%,0);
+    top: 50px;
+    left: 170px;
 }
 #ketquatracuu {
     max-height: 400px;
@@ -192,5 +191,35 @@ input{
     top: 23%;
     left: 8%;
     transform: translate(-8%,0%);
-    width: 400px;
+    width: 410px;
+}
+@media screen and (max-width: 1125px) {
+    #tracuuformP{
+        position: absolute;
+        left: 0px;
+    }
+    #tracuuinput, #ketquatracuu{
+        width: 200px;
+    }
+    #tracuutitle{
+        left: 50px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #tracuuinput, #ketquatracuu{
+        width: 100px;
+        left: 20px;
+    }
+    #tracuutitle{
+        left: 0px;
+    }
+    h1{
+        left: 600px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    
+    h1{
+        left: 300px;
+    }
 }
