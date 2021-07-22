@@ -5,6 +5,9 @@
     --fontcolor:rgb(70, 31, 17);
     --backgroundcolor: rgb(231, 231, 231);
 }
+h2 {
+    color: black;
+}
 body {
     background-image: url(study2.jpg);
     background-size: cover;
