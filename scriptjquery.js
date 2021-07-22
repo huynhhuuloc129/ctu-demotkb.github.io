@@ -15,7 +15,7 @@ function control(data) {
         setTimeout(() => {
             $("#ketquatracuu").show();
             searchbar()
-        }, 1000); 
+        }, 1000);
     });
 
     buttoncontact();
@@ -65,6 +65,11 @@ function xuli(val, data) {
     } else {
         alert("Không tồn tại mã học phần này");
     }
+    window.scrollTo({
+        top: 2000,
+        left: 2000,
+        behavior: 'smooth'
+      });
 }
 
 // Kiểm tra các ngày trong tkb hiện có có trùng hp nào ko
@@ -183,6 +188,7 @@ function xulibutton(buttonclass, vitri) {
     var thu = parseInt(childlist[6 + 11 * (vitri - 1)].innerHTML);
     var tietbd = parseInt(childlist[7 + 11 * (vitri - 1)].innerHTML);
     if ($(buttonclass)[0].className.indexOf("active") >= 0) {
+        scrolltop();
         changeBackgroundButton(buttonclass, "Delete", "Grey", ".child" + vitri, "black");
         addtoTKB(kihieu, mahp, phong, sotiet, thu, tietbd);
     } else {
@@ -228,17 +234,17 @@ function buttoncontact() {
 function searchbar() {
     var value = $("#tracuuinput").val().toUpperCase();
     var ketquatracuu = $(".ketqua");
-    if (value =="") {
+    if (value == "") {
         $("#ketquatracuu").hide();
     }
     for (let i = 0; i < ketquatracuu.length; i++) {
         if (ketquatracuu[i].innerHTML.toUpperCase().indexOf(value) > -1) {
-            $(".ketqua"+i).show();   
-        } else $(".ketqua"+i).hide();
+            $(".ketqua" + i).show();
+        } else $(".ketqua" + i).hide();
     }
 }
 function showhp(data) {
-    var j=-1;
+    var j = -1;
     for (let i = 0; i < data.length - 1; i++) {
         let tenhp = data[i]["Tên học phần"];
         let mahp = data[i]["Mã HP"];
@@ -247,4 +253,7 @@ function showhp(data) {
             $("#ketquatracuu").append("<div class=\"ketqua ketqua" + j + "\">" + tenhp + " - " + mahp + "</div>");
         }
     }
+}
+function scrolltop() {
+    window.scrollTo(100, 100);
 }
