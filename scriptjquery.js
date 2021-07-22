@@ -255,5 +255,5 @@ function showhp(data) {
     }
 }
 function scrolltop() {
-    window.scrollTo(100, 100);
+    window.scrollTo(0, 0);
 }
