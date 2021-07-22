@@ -19,15 +19,11 @@ body {
     border-top: var(--border);
     border-left: var(--border);
 }
-h2, h1{
-    color: black;
-   
-}
 h1 {
-    color: rgb(59, 98, 129);
+    color: black;
     position: absolute;
     top: -5px;
-    left: 75%;
+    left: 65%;
     transform: translate(-75%,0%);
     justify-content: center;
     text-align: center;
@@ -168,7 +164,9 @@ input{
 #tracuuform{
     position: absolute;
     top: 120px;
-    left: 75px;
+    left: 5.67%;
+    transform: translate(5.641%, 0);
+
 }
 #tracuuinput{
     width: 400px;
@@ -178,7 +176,8 @@ input{
     position: absolute;
     padding: 0 0 0 20px;
     top: 50px;
-    left: 170px;
+    left: 20%;
+    transform: translate(-40%,0);
 }
 #ketquatracuu {
     max-height: 400px;
@@ -188,38 +187,37 @@ input{
     overflow:scroll; 
     border: 2px solid black;
     position: absolute;
-    top: 23%;
-    left: 8%;
-    transform: translate(-8%,0%);
+    top: 150px;
+    left: 5.75%;
+    transform: translate(5.641%, 0);
     width: 410px;
 }
 @media screen and (max-width: 1125px) {
-    #tracuuformP{
-        position: absolute;
-        left: 0px;
-    }
-    #tracuuinput, #ketquatracuu{
+    
+    #tracuuinput{
         width: 200px;
     }
-    #tracuutitle{
-        left: 50px;
+    #ketquatracuu{
+        width: 210px;
     }
-}
-@media screen and (max-width: 1000px) {
-    #tracuuinput, #ketquatracuu{
-        width: 100px;
-        left: 20px;
-    }
-    #tracuutitle{
-        left: 0px;
-    }
-    h1{
-        left: 600px;
-    }
-}
-@media screen and (max-width: 1000px) {
     
-    h1{
-        left: 300px;
+}
+@media screen and (max-width: 1000px) {
+    #tracuuinput {
+        width: 100px;
+    }
+    #ketquatracuu{
+        width: 110px;
+    }
+    #warning{
+        display: none;
+    }
+}
+@media screen and (max-width: 800px) {
+    #mahptitle{
+        font-size: 20px;
+    }
+    #form{
+        width: 200px;
     }
 }
