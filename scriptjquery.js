@@ -1,5 +1,6 @@
 // var data;
 $(document).ready(function () {
+    getdata();
     $("#idea, #code").hide();
     // lấy file json
     var data;
@@ -7,7 +8,8 @@ $(document).ready(function () {
         control(data);
     });
 });
-
+// Kiểm tra người dùng sắp leave pages
+//
 function control(data) {
     showhp(data) // Hiện mã hp (all)
     $("#tracuuinput").keyup(function (e) {
@@ -69,7 +71,7 @@ function xuli(val, data) {
         top: 2000,
         left: 2000,
         behavior: 'smooth'
-      });
+    });
 }
 
 // Kiểm tra các ngày trong tkb hiện có có trùng hp nào ko
@@ -96,7 +98,7 @@ function ngaytrungnhau() {
                         if (malop == childlist[0 + 11 * k].innerHTML) {
                             let buttonlistname = "." + buttonlist[j].className.slice(0, buttonlist[j].className.indexOf(" ")) + (j + 1);
                             $(buttonlistname)[0].className += " active";
-                            changeBackgroundButton(buttonlistname, "Delete", "Grey", ".child" + (j + 1), "black");
+                            changeBackgroundButton(buttonlistname, "Delete", "rgb(182, 182, 182)", ".child" + (j + 1), "black");
                         }
                     }
                 } else if ((thuhienco == thu) && (tietbd + sotiet >= vitri) && (tietbd <= vitri) && (mahp != mahptkb || malop != maloptkb)) {
@@ -126,7 +128,7 @@ function hptrungnhau() {
                     && (kihieu == tietcontent.slice(tietcontent.indexOf("-") + 1, tietcontent.indexOf("<")))) {
                     let buttonlistname = "." + buttonlist[j].className.slice(0, buttonlist[j].className.indexOf(" ")) + (j + 1);
                     $(buttonlistname)[0].className += " active";
-                    changeBackgroundButton(buttonlistname, "Delete", "Grey", ".child" + (j + 1), "black");
+                    changeBackgroundButton(buttonlistname, "Delete", "rgb(182, 182, 182)", ".child" + (j + 1), "black");
                 }
             }
         }
@@ -189,7 +191,7 @@ function xulibutton(buttonclass, vitri) {
     var tietbd = parseInt(childlist[7 + 11 * (vitri - 1)].innerHTML);
     if ($(buttonclass)[0].className.indexOf("active") >= 0) {
         scrolltop();
-        changeBackgroundButton(buttonclass, "Delete", "Grey", ".child" + vitri, "black");
+        changeBackgroundButton(buttonclass, "Delete", "rgb(182, 182, 182)", ".child" + vitri, "black");
         addtoTKB(kihieu, mahp, phong, sotiet, thu, tietbd);
     } else {
         changeBackgroundButton(buttonclass, "Add", "", ".child" + vitri, "brown");
@@ -256,4 +258,20 @@ function showhp(data) {
 }
 function scrolltop() {
     window.scrollTo(0, 0);
+}
+
+// lưu tạm bộ nhớ
+$(window).on('beforeunload', function(){
+    var tietlist = $(".tiet");
+    for (let i = 0; i < tietlist.length; i++) {
+        localStorage.setItem('key'+i, tietlist[i].innerHTML);
+    }
+});
+function getdata(){
+    var tietlist = $(".tiet");
+    for (let i=0; i<tietlist.length;i++){
+        let data = localStorage.getItem('key'+i);
+        if (data!= "undefined" && data.length>4)
+        tietlist[i].innerHTML = data;   
+    }
 }
