@@ -41,10 +41,17 @@ function control(data) {
 //xóa memory
 function clearMemory() {
     var tietlist = $(".tiet");
+    var buttonlist = $(".childbutton");
     for (let i = 0; i < tietlist.length; i++) {
-        tietlist[i].innerHTML="";
+        tietlist[i].innerHTML = "";
     }
     localStorage.clear();
+    for (let i = 0; i < buttonlist.length; i++) {
+        changeBackgroundButton(".childbutton"+(i+1), "Add", "", ".child" + (i+1), "brown");
+        buttonlist[i].disabled = false;
+        buttonlist[i].className = "childbutton childbutton"+(i+1);
+    }
+
 }
 
 // xóa input value và pass value đó cho xử lí
