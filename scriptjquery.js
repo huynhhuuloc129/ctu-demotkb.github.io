@@ -271,7 +271,7 @@ function getdata(){
     var tietlist = $(".tiet");
     for (let i=0; i<tietlist.length;i++){
         let data = localStorage.getItem('key'+i);
-        if (data!= "undefined" && data.length>4)
+        if (data!= "undefined" && data!= "null" && data.length>4)
         tietlist[i].innerHTML = data;   
     }
 }
