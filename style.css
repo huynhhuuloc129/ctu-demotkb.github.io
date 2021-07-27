@@ -5,7 +5,7 @@
     --fontcolor:rgb(70, 31, 17);
     --backgroundcolor: rgb(231, 231, 231);
 }
-h2 {
+h2{
     color: black;
 }
 body {
@@ -31,14 +31,24 @@ h1 {
     justify-content: center;
     text-align: center;
 }
+#cleartkb{
+    width: 80px;
+    height: 50px;
+    z-index: 20;
+    position: absolute;
+    top: 45px;
+    left: 95%;
+    transform: translate(-110%,-50%);
+}
+/* #cleartkb:hover{
+    background: rgb(192, 192, 192);
+} */
 #tkb {
     z-index: 9;
     background-color: var(--backgroundcolor);
     border-radius: 10px;
     position: absolute;
     display: grid;
-    grid-template-columns: 0px;
-    grid-template-rows: 0;
     top: 350px;
     left: 90%;
     grid-template-columns: repeat(8,80px);
@@ -169,8 +179,8 @@ input{
     top: 120px;
     left: 5.67%;
     transform: translate(5.641%, 0);
-
 }
+
 #tracuuinput{
     width: 400px;
 }
@@ -185,7 +195,7 @@ input{
 #ketquatracuu {
     max-height: 400px;
     display: none;
-    background: var(--backgroundcolor);
+    /* background: var(--backgroundcolor); */
     height: auto;
     overflow:scroll; 
     border: 2px solid black;
@@ -216,11 +226,13 @@ input{
         display: none;
     }
 }
+
 @media screen and (max-width: 800px) {
     #mahptitle{
         font-size: 20px;
     }
     #form{
+        /* color: rgb(182, 182, 182); */
         width: 200px;
     }
 }

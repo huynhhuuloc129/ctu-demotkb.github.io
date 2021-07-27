@@ -19,7 +19,10 @@ function control(data) {
             searchbar()
         }, 1000);
     });
-
+    $("#cleartkb").click(function (e) {
+        e.preventDefault();
+        clearMemory();
+    })
     buttoncontact();
     // click vào icon search
     $(".fa-search").click(function (e) {
@@ -34,6 +37,14 @@ function control(data) {
             goixuli(data)
         }
     });
+}
+//xóa memory
+function clearMemory() {
+    var tietlist = $(".tiet");
+    for (let i = 0; i < tietlist.length; i++) {
+        tietlist[i].innerHTML="";
+    }
+    localStorage.clear();
 }
 
 // xóa input value và pass value đó cho xử lí
@@ -261,17 +272,17 @@ function scrolltop() {
 }
 
 // lưu tạm bộ nhớ
-$(window).on('beforeunload', function(){
+$(window).on('beforeunload', function () {
     var tietlist = $(".tiet");
     for (let i = 0; i < tietlist.length; i++) {
-        localStorage.setItem('key'+i, tietlist[i].innerHTML);
+        localStorage.setItem('key' + i, tietlist[i].innerHTML);
     }
 });
-function getdata(){
+function getdata() {
     var tietlist = $(".tiet");
-    for (let i=0; i<tietlist.length;i++){
-        let data = localStorage.getItem('key'+i);
-        if (data!= "undefined" && data!= "null" && data.length>4)
-        tietlist[i].innerHTML = data;   
+    for (let i = 0; i < tietlist.length; i++) {
+        let data = localStorage.getItem('key' + i);
+        if (data != "undefined" && data != "null" && data.length > 4)
+            tietlist[i].innerHTML = data;
     }
 }
