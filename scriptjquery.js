@@ -97,12 +97,16 @@ function ngaytrungnhau() {
     var tiet = $(".tiet");
     var childlist = $(".child");
     var buttonlist = $(".childbutton");
+    // Chạy các tiết trong tkb
     for (let i = 0; i < tiet.length; i++) {
+        // nếu tiết ko rỗng thì lấy dữ liệu
         if (tiet[i].innerHTML != "") {
             let maloptkb = tiet[i].innerHTML.slice(tiet[i].innerHTML.indexOf("-") + 1, tiet[i].innerHTML.indexOf("<"));
             let mahptkb = tiet[i].innerHTML.slice(0, tiet[i].innerHTML.indexOf("-"));
             let thuhienco = tiet[i].className.match(/(\d+)/)[0];
+            // lấy số cuối cùng là tiết thứ mấy
             let vitri = tiet[i].className.slice(tiet[i].className.lastIndexOf(" ") + 1, tiet[i].className.length).match(/(\d+)/)[0];
+            // Chạy các button từ trên xuống
             for (let j = 0; j < buttonlist.length; j++) {
 
                 let sotiet = parseInt(childlist[5 + 11 * j].innerHTML);
@@ -110,7 +114,7 @@ function ngaytrungnhau() {
                 let tietbd = parseInt(childlist[7 + 11 * j].innerHTML);
                 let malop = childlist[0 + 11 * j].innerHTML;
                 let mahp = childlist[2 + 11 * j].innerHTML;
-                if ((thuhienco == thu) && (tietbd + sotiet >= vitri) && (tietbd <= vitri) && (mahp == mahptkb) && (malop == maloptkb)) {
+                if ((thuhienco == thu) && (tietbd + sotiet -1  >= vitri) && (tietbd <= vitri) && (mahp == mahptkb) && (malop == maloptkb)) {
                     // Chạy dòng for check coi có ai trùng mã lớp thì cho disable luôn
                     for (let k = 0; k < buttonlist.length; k++) {
                         if (malop == childlist[0 + 11 * k].innerHTML) {
@@ -119,7 +123,7 @@ function ngaytrungnhau() {
                             changeBackgroundButton(buttonlistname, "Delete", "rgb(182, 182, 182)", ".child" + (j + 1), "black");
                         }
                     }
-                } else if ((thuhienco == thu) && (tietbd + sotiet >= vitri) && (tietbd <= vitri) && (mahp != mahptkb || malop != maloptkb)) {
+                } else if ((thuhienco == thu) && (tietbd + sotiet -1  >= vitri) && (tietbd <= vitri) && (mahp != mahptkb || malop != maloptkb)) {
                     let malop1 = childlist[0 + 11 * j].innerHTML;
                     for (let k = 0; k < buttonlist.length; k++) {
                         if (childlist[0 + 11 * k].innerHTML == malop1) {
