@@ -22,7 +22,7 @@ function control(data) {
     $("#cleartkb").click(function (e) {
         e.preventDefault();
         clearMemory();
-    })
+    });
     buttoncontact();
     // click vào icon search
     $(".fa-search").click(function (e) {
@@ -289,7 +289,7 @@ function getdata() {
     var tietlist = $(".tiet");
     for (let i = 0; i < tietlist.length; i++) {
         let data = localStorage.getItem('key' + i);
-        if (data != "undefined" && data != "null" && data.length > 4)
+        if (data != "undefined" && data != "null" && data != null && data != undefined && data.length > 4)
             tietlist[i].innerHTML = data;
     }
 }
