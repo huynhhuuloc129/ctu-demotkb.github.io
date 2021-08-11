@@ -220,13 +220,13 @@ input{
     }
     #tkb{
         grid-template-columns: repeat(7,80px);
-        grid-template-rows: repeat(10,50px);
+        grid-template-rows: repeat(11,50px);
     }
 }
 @media screen and (max-width: 569px) {
     #tkb{
         grid-template-columns: repeat(7,70px);
-        grid-template-rows: repeat(10,60px);
+        grid-template-rows: repeat(11,60px);
     }
 }
 @media screen and (max-width: 510px) {
@@ -247,7 +247,7 @@ input{
     }
     #tkb{
         grid-template-columns: repeat(6,70px);
-        grid-template-rows: repeat(10,60px);
+        grid-template-rows: repeat(11,60px);
     }
 }
 /*
