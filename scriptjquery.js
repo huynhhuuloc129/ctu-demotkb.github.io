@@ -163,7 +163,7 @@ function createElement(tagname, element, vitri) {
     var title = $(".title");   // chọn các tên đầu
     for (let i = 0; i < 12; i++) {   // Tìm coi tên title trùng nhau thì pass vào
         for (part in element) {
-            if (part == title[i].innerHTML) {
+            if (part == title[i].innerHTML && title[i].style.display != "none") {
                 $("#displayres").append("<" + tagname + " class=\"child child" + vitri + "\">" + element[part] + "</" + tagname + ">");
             }
         }

@@ -8,6 +8,15 @@
 h2{
     color: black;
 }
+#header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#header2{
+    display: flex;
+    justify-content: space-between;
+}
 body {
     background-image: url(study2.jpg);
     background-size: cover;
@@ -15,7 +24,6 @@ body {
     color: var(--fontcolor);
     overflow:visible;
     background-attachment: fixed;
-    /* background-color: rgb(255, 235, 235); */
     font-family: var(--font);
 }
 .griditem{
@@ -23,11 +31,10 @@ body {
     border-left: var(--border);
 }
 h1 {
-    color: black;
     position: absolute;
-    top: -5px;
-    left: 65%;
-    transform: translate(-75%,0%);
+    top: -10px;
+    right: 30%;
+    color: black;
     justify-content: center;
     text-align: center;
 }
@@ -35,24 +42,16 @@ h1 {
     width: 80px;
     height: 50px;
     z-index: 20;
-    position: absolute;
-    top: 45px;
-    left: 95%;
-    transform: translate(-110%,-50%);
 }
 
 #tkb {
     z-index: 9;
     border-radius: 10px;
-    position: absolute;
     display: grid;
-    top: 350px;
-    left: 90%;
     grid-template-columns: repeat(8,80px);
     grid-template-rows: repeat(11,50px);
     grid-row-gap: 0;
     grid-column-gap: 0;
-    transform: translate(-90%,-50%);
 }
 .t8, .thu8{
     border-right: var(--border);
@@ -72,12 +71,9 @@ h1 {
 }
 
 #inputform{
-    position: absolute;
-    top: 670px;
-    left: 50%;
-    transform: translate(-50%,-50%);
     justify-content: center;
     text-align: center;
+    margin-bottom: 10px;
 }
 #form{
     border: var(--border);
@@ -85,26 +81,27 @@ h1 {
     width: 300px;
     padding: 5px;
 }
+#body{
+    display: flex;
+    flex-direction: column;
 
+}
 #displayres{
-    z-index: -1;
     border-radius: 10px;
-    position: absolute;
     display: grid;
-    margin-bottom: 200px;
-    top: 740px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    background: var(--backgroundcolor);
-
+    background: transparent;
     grid-template-columns: 40px 100px 60px 80px 40px 40px 40px 40px 200px 200px 40px 50px;
     justify-content: center;
     text-align: center;
 }
 .title{
     border: var(--border);
+    background-color: var(--backgroundcolor);
 }
-
+#contact2{
+    display: flex;
+    flex-direction: row;
+}
 button{
     font-family: var(--font);
     cursor: pointer;
@@ -121,7 +118,7 @@ button{
 }
 #idea-name,#code-name{
     font-size:15px ;
-    padding:2px 2px 2px 4px;
+    padding:0px 2px 0px 4px;
 }
 #idea,#code{
     display: none;
@@ -163,8 +160,6 @@ input{
     color: brown;
 }
 #warning{
-    position: absolute; 
-    top: 600px;
     color: rgb(206, 0, 0);
     z-index: -9;
 }
@@ -174,23 +169,12 @@ input{
     font-size: 20px;
     cursor: pointer;
 }
-#tracuuform{
-    position: absolute;
-    top: 120px;
-    left: 5.67%;
-    transform: translate(5.641%, 0);
-}
-
 #tracuuinput{
     width: 400px;
 }
 #tracuutitle{
     color: black;
-    position: absolute;
     padding: 0 0 0 20px;
-    top: 50px;
-    left: 20%;
-    transform: translate(-40%,0);
 }
 #ketquatracuu {
     max-height: 400px;
@@ -199,22 +183,74 @@ input{
     height: auto;
     overflow:scroll; 
     border: 2px solid black;
-    position: absolute;
-    top: 150px;
-    left: 5.75%;
-    transform: translate(5.641%, 0);
     width: 410px;
 }
-@media screen and (max-width: 1125px) {
-    
-    #tracuuinput{
-        width: 200px;
+ @media screen and (max-width: 1084px) {
+    #contact{
+        display: none;
     }
     #ketquatracuu{
-        width: 210px;
+        position: absolute;
+        left: 8px;
+        top: 165px;
     }
-    
+    #header2{
+        display: flex;
+        flex-direction: column;
+    }
+    h1{
+        top: 0px;
+    }
+    /* .tuanhoc{
+        display: none;
+    }
+    .siso{
+        display: none;
+    }
+    #displayres{
+        grid-template-columns: 50px 80px 60px 80px 40px 40px 40px 200px 40px 50px;
+    } */
 }
+@media screen and (max-width: 666px) {
+    h1{
+        right: 5%;
+    }
+    .titlet{
+        display: none;
+    }
+    #tkb{
+        grid-template-columns: repeat(7,80px);
+        grid-template-rows: repeat(10,50px);
+    }
+}
+@media screen and (max-width: 569px) {
+    #tkb{
+        grid-template-columns: repeat(7,70px);
+        grid-template-rows: repeat(10,60px);
+    }
+}
+@media screen and (max-width: 510px) {
+    #tracuuinput{
+        width: 300px;
+    }
+    #ketquatracuu{
+        width: 310px;
+    }
+    .thu7,.t7:not(.break){
+        border-right: 2px solid black;
+    }
+    .thu8, .t8{
+        display: none;
+    }
+    h1{
+        top: 0px;
+    }
+    #tkb{
+        grid-template-columns: repeat(6,70px);
+        grid-template-rows: repeat(10,60px);
+    }
+}
+/*
 @media screen and (max-width: 1000px) {
     #tracuuinput {
         width: 100px;
@@ -233,6 +269,6 @@ input{
     }
     #form{
         /* color: rgb(182, 182, 182); */
-        width: 200px;
+        /* width: 200px;
     }
-}
+} */ 
