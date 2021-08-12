@@ -8,6 +8,9 @@
 h2{
     color: black;
 }
+hr{
+    border: 1px solid black;
+}
 #header{
     width: 100%;
     display: flex;
@@ -15,7 +18,7 @@ h2{
 }
 #header2{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 body {
     background-image: url(study2.jpg);
@@ -45,7 +48,7 @@ h1 {
 }
 
 #tkb {
-    z-index: 9;
+    z-index: 1;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(8,80px);
@@ -185,14 +188,18 @@ input{
     border: 2px solid black;
     width: 410px;
 }
+ul{
+    list-style-type: none;
+}
  @media screen and (max-width: 1084px) {
     #contact{
         display: none;
     }
     #ketquatracuu{
+        z-index: 2;
         position: absolute;
         left: 8px;
-        top: 165px;
+        top: 180px;
     }
     #header2{
         display: flex;
@@ -201,15 +208,12 @@ input{
     h1{
         top: 0px;
     }
-    /* .tuanhoc{
-        display: none;
-    }
-    .siso{
+    .tuanhoc, .tenhocphan,.mahp{
         display: none;
     }
     #displayres{
-        grid-template-columns: 50px 80px 60px 80px 40px 40px 40px 200px 40px 50px;
-    } */
+        grid-template-columns: 40px 90px 70px 40px 40px 40px 40px 40px 50px;
+    }
 }
 @media screen and (max-width: 666px) {
     h1{
@@ -223,13 +227,7 @@ input{
         grid-template-rows: repeat(11,50px);
     }
 }
-@media screen and (max-width: 569px) {
-    #tkb{
-        grid-template-columns: repeat(7,70px);
-        grid-template-rows: repeat(11,60px);
-    }
-}
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 577px) {
     #tracuuinput{
         width: 300px;
     }
@@ -250,25 +248,3 @@ input{
         grid-template-rows: repeat(11,60px);
     }
 }
-/*
-@media screen and (max-width: 1000px) {
-    #tracuuinput {
-        width: 100px;
-    }
-    #ketquatracuu{
-        width: 110px;
-    }
-    #warning{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    #mahptitle{
-        font-size: 20px;
-    }
-    #form{
-        /* color: rgb(182, 182, 182); */
-        /* width: 200px;
-    }
-} */ 

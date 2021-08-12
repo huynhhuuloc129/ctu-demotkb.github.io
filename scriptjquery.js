@@ -164,7 +164,13 @@ function createElement(tagname, element, vitri) {
     for (let i = 0; i < 12; i++) {   // Tìm coi tên title trùng nhau thì pass vào
         for (part in element) {
             if (part == title[i].innerHTML && title[i].style.display != "none") {
-                $("#displayres").append("<" + tagname + " class=\"child child" + vitri + "\">" + element[part] + "</" + tagname + ">");
+                if (part=="Tuần học")
+                $("#displayres").append("<" + tagname + " class=\"child tuanhoc child" + vitri + "\">" + element[part] + "</" + tagname + ">");
+                else if (part=="Tên học phần")
+                $("#displayres").append("<" + tagname + " class=\"child tenhocphan child" + vitri + "\">" + element[part] + "</" + tagname + ">");
+                else if (part=="Mã HP")
+                $("#displayres").append("<" + tagname + " class=\"child mahp child" + vitri + "\">" + element[part] + "</" + tagname + ">");
+                else $("#displayres").append("<" + tagname + " class=\"child child" + vitri + "\">" + element[part] + "</" + tagname + ">");
             }
         }
     }
