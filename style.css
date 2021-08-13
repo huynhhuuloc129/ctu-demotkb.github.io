@@ -19,6 +19,7 @@ hr{
 #header2{
     display: flex;
     justify-content: space-around;
+    
 }
 body {
     background-image: url(study2.jpg);
@@ -198,12 +199,14 @@ ul{
     #ketquatracuu{
         z-index: 2;
         position: absolute;
-        left: 8px;
+        /* transform: translateY(180x); */
+
         top: 180px;
     }
     #header2{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     h1{
         top: 0px;
